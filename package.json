@@ -1,0 +1,26 @@
+{
+  "name": "my-voice",
+  "version": "0.0.0",
+  "description": "A tty interface for the `say` command",
+  "main": "voice.js",
+  "bin": {
+    "voice": "./bin/voice"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/socsieng/my-voice.git"
+  },
+  "keywords": [
+    "say",
+    "voice"
+  ],
+  "author": "socsieng@gmail.com",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/socsieng/my-voice/issues"
+  },
+  "homepage": "https://github.com/socsieng/my-voice"
+}
