@@ -1,6 +1,6 @@
 {
   "name": "my-voice",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A command line chat application with text-to-speech capabilities",
   "main": "voice.js",
   "bin": {
@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/socsieng/my-voice",
   "dependencies": {
+    "colors": "^0.6.2",
     "commander": "^2.2.0",
     "socket.io": "^1.0.6",
     "socket.io-client": "^1.0.6"
