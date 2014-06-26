@@ -1,5 +1,17 @@
 # my-voice
 
-my-voice is a very basic tty interface around the built in OSX `say` command. It allows you to trigger `say` on `enter`.
+my-voice is a very basic command line chat application with text-to-speech capabilities.
 
 At the moment, it only works on OSX with the `say` command.
+
+Installation:
+
+```
+> sudo npm install my-voice -g
+```
+
+Usage:
+
+```
+> voice <name> [endpoint]
+```

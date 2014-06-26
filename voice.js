@@ -1,17 +1,23 @@
-var readline = require('readline');
-var spawn = require('child_process').spawn
+var program = require('commander');
 
-var rl = readline.createInterface({
-	input: process.stdin,
-	output: process.stdout
-});
+program.version('0.0.1')
+	.usage('<name> [endpoint]');
 
-rl.setPrompt('', 0);
+program.command('server')
+	.description('create a voice chat server')
+	.option('-p, --port <portNumber>', 'port to listen to [80]', '80')
+	.action(function (cmd) {
+		var server = require('./lib/server');
+		server.start(cmd.port);
+	});
 
-rl.prompt(true);
+program.command('*')
+	.description('connect to a voice chat server')
+	.usage('<name> [endpoint]')
+	.action(function (name, endpoint, cmd) {
+		var client = require('./lib/client');
+		client.connect(name, typeof endpoint === 'string' ? endpoint : 'http://soc-node.cloudapp.net:80/');
+	});
 
-rl.on('line', function (l) {
-	if (l && l.trim()) {
-		spawn('say', [l]);
-	}
-});
+
+program.parse(process.argv);
