@@ -16,7 +16,7 @@ program.command('*')
 	.usage('<name> [endpoint]')
 	.action(function (name, endpoint, cmd) {
 		var client = require('./lib/client');
-		client.connect(name, typeof endpoint === 'string' ? endpoint : 'http://soc-node.cloudapp.net:80/');
+		client.connect(name, typeof endpoint === 'string' ? endpoint : 'http://soc-node.cloudapp.net/');
 	});
 
 
