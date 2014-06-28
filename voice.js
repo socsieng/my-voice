@@ -7,7 +7,11 @@ program.command('connect')
 	.usage('<nickname> [endpoint]')
 	.action(function (name, endpoint, cmd) {
 		var client = require('./lib/client');
-		client.connect(name, typeof endpoint === 'string' ? endpoint : 'http://soc-node.cloudapp.net/');
+		var options = {
+			version: program.version(),
+			platform: process.platform
+		}
+		client.connect(name, typeof endpoint === 'string' ? endpoint : 'http://soc-node.cloudapp.net/', options);
 	});
 
 program.command('echo')
