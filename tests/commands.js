@@ -47,8 +47,10 @@ describe('commands', function () {
 	});
 
 	afterEach(function () {
+		io = null;
 		socket = null;
 		roomBroadcast = null;
+		commands = null;
 	});
 
 	describe('bad command', function () {
