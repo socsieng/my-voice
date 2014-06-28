@@ -1,6 +1,6 @@
 var program = require('commander');
 
-program.version('0.0.2');
+program.version('0.0.4');
 
 program.command('connect')
 	.description('connect to a voice chat server')
@@ -24,5 +24,8 @@ program.command('server')
 		server.start(cmd.port);
 	});
 
-
 program.parse(process.argv);
+
+if (program.args.length === 0) {
+	program.help();
+}
