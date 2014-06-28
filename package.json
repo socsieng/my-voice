@@ -1,6 +1,6 @@
 {
   "name": "my-voice",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A command line chat application with text-to-speech capabilities",
   "main": "voice.js",
   "bin": {
@@ -15,7 +15,8 @@
   },
   "keywords": [
     "say",
-    "voice"
+    "voice",
+		"chat"
   ],
   "author": "socsieng@gmail.com",
   "license": "BSD-2-Clause",
