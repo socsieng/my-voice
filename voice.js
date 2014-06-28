@@ -1,6 +1,6 @@
 var program = require('commander');
 
-program.version('0.0.4');
+program.version('0.0.4'); // automatically updated from package.json
 
 program.command('connect')
 	.description('connect to a voice chat server')
@@ -10,7 +10,7 @@ program.command('connect')
 		var options = {
 			version: program.version(),
 			platform: process.platform
-		}
+		};
 		client.connect(name, typeof endpoint === 'string' ? endpoint : 'http://soc-node.cloudapp.net/', options);
 	});
 
