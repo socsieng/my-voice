@@ -13,5 +13,5 @@ Installation:
 Usage:
 
 ```
-> voice <name> [endpoint]
+> voice connect <name> [endpoint]
 ```

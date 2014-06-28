@@ -1,6 +1,6 @@
 {
   "name": "my-voice",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A command line chat application with text-to-speech capabilities",
   "main": "voice.js",
   "bin": {
