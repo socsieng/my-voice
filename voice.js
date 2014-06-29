@@ -1,6 +1,6 @@
 var program = require('commander');
 
-program.version('0.0.5'); // automatically updated from package.json
+program.version('0.0.6'); // automatically updated from package.json
 
 program.command('connect')
 	.description('connect to a voice chat server')
