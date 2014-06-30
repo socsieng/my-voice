@@ -14,10 +14,10 @@ program.command('connect')
 		client.connect(name, typeof endpoint === 'string' ? endpoint : 'http://soc-node.cloudapp.net/', options);
 	});
 
-program.command('echo')
+program.command('say')
 	.description('convert text to speech locally')
 	.action(function () {
-		require('./lib/echo');
+		require('./lib/say');
 	});
 
 program.command('server')
