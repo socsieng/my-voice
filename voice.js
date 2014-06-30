@@ -4,14 +4,23 @@ program.version('0.0.6'); // automatically updated from package.json
 
 program.command('connect')
 	.description('connect to a voice chat server')
-	.usage('<nickname> [endpoint]')
+	.usage('<nickname> [endpoint] [options]')
+	.option('-e, --echo', 'enable speech for your own messages')
 	.action(function (name, endpoint, cmd) {
 		var client = require('./lib/client');
+
+		if (typeof endpoint !== 'string') {
+			cmd = endpoint;
+			endpoint = 'http://soc-node.cloudapp.net/';
+		}
+
 		var options = {
 			version: program.version(),
-			platform: process.platform
+			platform: process.platform,
+			echo: cmd.echo
 		};
-		client.connect(name, typeof endpoint === 'string' ? endpoint : 'http://soc-node.cloudapp.net/', options);
+
+		client.connect(name, endpoint, options);
 	});
 
 program.command('say')
