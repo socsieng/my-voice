@@ -110,4 +110,25 @@ describe('commands', function () {
 			expect(roomBroadcast.callCount).to.be(2);
 		});
 	});
+
+	describe('nick', function () {
+		it('should change name when the name is different', function () {
+			commands.execute(socket, 'nick', ['bro']);
+			expect(socket.info.name).to.be('bro');
+			expect(roomBroadcast.callCount).to.be(1);
+			expect(roomBroadcast.args[0]).to.eql(['status', { message: 'dude has changed their name to bro' }]);
+		});
+
+		it('should not change name when the name is the same', function () {
+			commands.execute(socket, 'nick', ['dude']);
+			expect(socket.info.name).to.be('dude');
+			expect(roomBroadcast.callCount).to.be(0);
+		});
+
+		it('should not change name when no room is provided', function () {
+			commands.execute(socket, 'nick', []);
+			expect(socket.info.name).to.be('dude');
+			expect(socket.emit.calledWith('status', { message: 'Error: invalid arguments' })).to.be(true);
+		});
+	});
 });
